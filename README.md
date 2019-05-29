@@ -143,7 +143,7 @@ network.
 The simplest guide I found was the one here : [https://www.tonymacx86.com/threads/simple-imessage-guide-for-yosemite-and-el-capitan.186276/](https://www.tonymacx86.com/threads/simple-imessage-guide-for-yosemite-and-el-capitan.186276/) , but I didn't have any problems from start.
 
 **P.S**
-Feel free to create issues to fix or suggest my guide, you're welcome!
+Feel free to create issues to fix or suggest my guide, you're welcome! Also, more comprehensive and descriptive guide can be found [here](https://www.tonymacx86.com/threads/guide-acer-swift-3-i5-8250u-mojave.249160/)
 
 **Credits:**
 
