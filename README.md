@@ -1,5 +1,5 @@
 
-# macOS 10.14.5 Mojave on Acer Swift 3 SF315-51-518S**
+# macOS 10.14.5 Mojave on Acer Swift 3 SF315-51-518S
 
 ## Specs
 
