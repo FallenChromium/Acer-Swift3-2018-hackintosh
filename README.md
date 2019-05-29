@@ -1,4 +1,4 @@
-
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A2NSUEHT9PMQC&source=url)
 # macOS 10.14.5 Mojave on Acer Swift 3 SF315-51-518S
 
 ## Specs
