@@ -155,7 +155,7 @@ Feel free to create issues to fix or suggest my guide, you're welcome! Also, mor
 
 [**alex.daoud**](https://github.com/alexandred) for VoodooI2C kext and hints for making it work with the trackpad.
 
-[**ioreknanou**](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/members/ioreknanou.80739/)for making guide for older model, this one is edit of [this](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/)
+[**ioreknanou**](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/members/ioreknanou.80739/) for making guide for older model, this one is edit of [this](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/)
 
 [**acidanthera**](https://github.com/acidanthera) for awesome kexts and first-class support for hackintosh enthusiasts
 
