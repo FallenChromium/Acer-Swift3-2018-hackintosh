@@ -1,5 +1,5 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A2NSUEHT9PMQC&source=url)
-# macOS 10.14.5 Mojave on Acer Swift 3 SF315-51-518S
+# macOS 10.15 Catalina on Acer Swift 3 SF315-51-518S
 
 ## Specs
 
@@ -76,27 +76,22 @@ tab on official Acer website (I have 1.05 at the moment)
 
 Once the update is done, go in your BIOS setup. For my model, I must press F2 at boot. Press F9 to reset default settings. Enable "F12 Boot Menu" in Main tab. Set Supervisor Password in Security tab. Disable "Secure Boot" in Boot tab. Save changes.
 
-## 2. Clover EFI bootloader installation
+## 2. OpenCore EFI bootloader installation
 
-Install Clover
+Install OpenCore (the easy way)
 
-- Choose the drive you need as destination
-- Select the following in the customize installation
-    - Install for UEFI booting only
-    - Install Clover in the ESP
-    - Drivers64UEFI/AptioMemoryFix-64
-    - Check that ApfsDriverLoader is going to be installed too
-- Click Install
+- mount the EFI partition you need, for example on macOS it is `sudo mkdir /Volumes/*mountpointname*` (for example `sudo mkdir /Volumes/EFI`) and after that `sudo mount -t msdos /dev/diskXsY /Volumes/*mountpointname*` (in my case sudo `mount -t msdos /dev/disk0s1 /Volumes/EFI` if I want to mount SSD's first partition)
+- Copy the EFI folder from [latest releases archive](https://github.com/FallenChromium/Acer-Swift3-2018-hackintosh/releases) to your drive
+- Done!
 
 ## 3. Installation guide
 - Create an installation USB drive with any convenient method (BDU\UniBeast\createinstallmedia\restore HFS file\etc.)
-- Install Clover on the USB drive (as shown above)
-- Replace EFI/CLOVER folder on your USB's EFI partition with CLOVER folder from my repository
+- Install OpenCore on the USB drive (as shown above). In case of UniBeast or BDU you might want to delete everything on USB EFI partition before installing
 - Shutdown the laptop
-- You must press F12 for this Acer laptop at boot to select USB flash drive. 
+- You must press F12 for this Acer laptop at boot to select USB flash drive. (Check if boot menu is enabled in BIOS, you can go to bios by pressing F2 on boot) 
 - Maybe you wouldn't be able to use trackpad on installation and for several boot cycles, it's normal, just get a USB mouse to use it. If the installed system wouldn't have trackpad do this in terminal: `sudo kextcache -i /`
-- Boot from USB again, choose your SSD boot option now. System may reboot several times, it's fine, always boot with USB until you'll install clover on your SSD.
-- That's pretty much it! Install Clover on your laptop, replace with my folder for kexts, SSDT and themes (feel free to DIY it, I'm just describing the easy way).
+- Boot from USB again, choose your SSD boot option now. System may reboot several times, it's fine, always boot with USB until you'll install OpenCore on your SSD.
+- That's pretty much it! Install latest release of this repository on your laptop (feel free to DIY it, I'm just describing the easy way).
  
 
 **Allow apps downloaded from Anywhere and other useful configurations**
@@ -120,10 +115,8 @@ It just speeds up the configuration. You can put it back as it was after this gu
 
 **Reboot**
 
-In
- System Preferences, Display, you should now see the Brightness slider. 
-You may remap brightness change to F10-F11 as did I, anyway you can't 
-use stock brightness shortcut without Karabiner.
+In System Preferences > Display, you should now see the Brightness slider. 
+You may remap brightness change to F10-F11 as I did, stock keys require an SSDT patch.
 
 **Fn Keyboard Shortcuts (same as on Windows)**
 
@@ -143,7 +136,7 @@ network.
 The simplest guide I found was the one here : [https://www.tonymacx86.com/threads/simple-imessage-guide-for-yosemite-and-el-capitan.186276/](https://www.tonymacx86.com/threads/simple-imessage-guide-for-yosemite-and-el-capitan.186276/) , but I didn't have any problems from start.
 
 **P.S**
-Feel free to create issues to fix or suggest my guide, you're welcome! Also, more comprehensive and descriptive guide can be found [here](https://www.tonymacx86.com/threads/guide-acer-swift-3-i5-8250u-mojave.249160/)
+Feel free to create issues to fix my guide or give me some suggestions, you're welcome! Also, more comprehensive and descriptive guide can be found [here](https://www.tonymacx86.com/threads/guide-acer-swift-3-i5-8250u-mojave.249160/)
 
 **Credits:**
 
