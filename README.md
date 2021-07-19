@@ -1,5 +1,5 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A2NSUEHT9PMQC&source=url)
-# macOS 10.15 Catalina on Acer Swift 3 SF315-51-518S
+# macOS 11 Big Sur on Acer Swift 3 SF315-51-518S
 
 ## Specs
 
@@ -45,28 +45,26 @@ Intel UHD Graphics 620 1536 МB
 
 ## What is NOT working
 
-- Built-in Wifi
-    - Must be replaced
+- Built-in Wifi\BT card
+    - Stock Wi-Fi card can be used with [itlwm](https://github.com/OpenIntelWireless/itlwm) and [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware), but because I don't have stock card anymore and I use Broadcom Wi-Fi for AirDrop and Continuity, if you want to use the stock wi-fi card, try to make it work yourself. On success, feel free to open an issue to describe your efforts and pull request to help other people!
 
 - Built-in SD card reader
 - Fingerprint
-    - It's detected but it is useless (can't authenticate on lockscreen or in password manager), so I decided to disable that port (I got shitloads of BiometricKit errors)
-- SSD. I had kernel panics with Intel 660p, I don't know if it works now, but 10.13.4 and lower certainly had problems with it.
+    - It's detected but it is useless (can't authenticate on lockscreen or in password manager), so I decided to disable that port.
+- SSD. I had kernel panics with Intel 660p, I don't know if it works now, but 10.13.4 and lower certainly had problems with it. As far as I know, not a problem anymore with Catalina and up.
     - Replaced with Samsung EVO970 250GB
 
 **What was not tested**
 
 - HDMI
 
-## What must be done
+## Optional things to do
 
 - Replace Wi-Fi module
     - I've installed DW1560 which is based on Broadcom BCM94352Z, all is working great
 
 - Replace SSD (stock one may or may not work fine, you should note that it can cause kernel panics)
     - Replaced with EVO970 250GB
-
-- Follow my guide
 
 ## 1. Updating BIOS to the latest version and BIOS configuration
 
@@ -112,24 +110,11 @@ It just speeds up the configuration. You can put it back as it was after this gu
 
 
 - You may change boot entries, timeout and add additional boot options if you want.
+- Make sure to generate proper SMBIOS, because all serial numbers are zeroed out in this repository. This is required to use Apple ID, iMessage and App Store. See [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
+- If you use Intel SSD, make sure TRIM works, lack of it can lead to serious performance issues.
+- You may remap brightness controls to F10-F11 as I did, stock keys require an SSDT patch which I didn't make at the moment.
 
-**Reboot**
-
-In System Preferences > Display, you should now see the Brightness slider. 
-You may remap brightness change to F10-F11 as I did, stock keys require an SSDT patch.
-
-**Fn Keyboard Shortcuts (same as on Windows)**
-
-- F3
- : Disconnect from your wireless network. Pressing it again won't 
-connect you back. You'll have to manually reselect your wireless 
-network.
-- F4 : Put laptop to sleep
-- F5 : Switch between displays (when you have another monitor)
-- F6 : Disable/Enable main display
-- F7 (and also PrtSc) : Disable/Enable trackpad
-- F9 : Disable/Enable keyboard's backlight
-- Up/Down: Volume
+At this point, you may eject your installation drive and reboot.
 
 **Messages and FaceTime fix**
 
@@ -146,9 +131,9 @@ Feel free to create issues to fix my guide or give me some suggestions, you're w
 
 [**RehabMan**](https://github.com/RehabMan) for great guides and useful files
 
-[**alex.daoud**](https://github.com/alexandred) for VoodooI2C kext and hints for making it work with the trackpad.
+[**alex.daoud**](https://github.com/alexandred) for VoodooI2C kext and hints for making it work with our trackpad.
 
-[**ioreknanou**](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/members/ioreknanou.80739/) for making guide for older model, this one is edit of [this](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/)
+[**ioreknanou**](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/members/ioreknanou.80739/) for making guide for older model, this guide is an edit of [this](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/)
 
 [**acidanthera**](https://github.com/acidanthera) for awesome kexts and first-class support for hackintosh enthusiasts
 
