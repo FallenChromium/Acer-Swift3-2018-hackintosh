@@ -1,5 +1,0 @@
-XSym
-0039
-fe3240665b96f5d6d6bf7679d6755079
-../../CLOVER/ACPI/patched/SSDT-DMAC.dsl
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

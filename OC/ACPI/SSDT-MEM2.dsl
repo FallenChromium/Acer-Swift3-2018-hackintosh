@@ -1,5 +1,0 @@
-XSym
-0039
-5bc5cf957bf677f5d38745ea446ee8aa
-../../CLOVER/ACPI/patched/SSDT-MEM2.dsl
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
