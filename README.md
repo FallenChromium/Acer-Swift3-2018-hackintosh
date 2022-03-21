@@ -1,10 +1,10 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A2NSUEHT9PMQC&source=url)
-# macOS 11 Big Sur on Acer Swift 3 SF315-51-518S
+# macOS 12 Monterey on Acer Swift 3 SF315-51
 
 ## Specs
 
 - CPU : Intel Core i5-8250U (Kabylake-R)
-- Graphics : Intel UHD 620
+- Graphics : Intel UHD 620 (+ NVidia GeForce MX150 in some models)
 - RAM : 8 GB DDR4 2133 MHz (non-replaceable)
 - SSD : 256 GB Intel 600p series (SSDPEKKW256G7) (M.2 2280 NVMe, replaceable. PCIe x2 speeds (1500MBs\540MBs) )
 - Screen : 15-inch 1920 x 1080 glossy IPS
@@ -20,6 +20,7 @@
 - Graphics  
 Intel UHD Graphics 620 1536 МB
     - QE\CI, Final Cut X works just fine
+    - SSDT is added to disable NVidia discrete GPU (not supported under macOS) 
 
 - Audio
     - Speakers, headphones and internal mic
@@ -29,16 +30,16 @@ Intel UHD Graphics 620 1536 МB
 
 - Trackpad
     - VoodooI2C makes it buttery-smooth, supports all the macOS gestures
+    - Additional SSDT is added to use the trackpad  in a mode with bigger precision and less power consumption
 
 - USB
     - Some injections has to be done and it may vary from model to model, more details below
 
 - Webcam
-    - PhotoBooth works fine, lol
 
 - Sleep/Wake
     - Lid also working
-    - To my knowledge, no weird things after sleep/wake
+    - To my knowledge, no weird things after sleep/wake (sound problems may occur, report an Issue if you have faced this problem)
         - If you disable the wifi with Acer's keyboard shortcut (Fn+F3) and go to sleep, wifi won't be able to be enable. You'll have to reboot the laptop.
     - At least 6 hours battery life
         - Tested with 10.13.4 (max brightness, 720p on safari, USB wifi dongle)
@@ -49,10 +50,15 @@ Intel UHD Graphics 620 1536 МB
     - Stock Wi-Fi card can be used with [itlwm](https://github.com/OpenIntelWireless/itlwm) and [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware), but because I don't have stock card anymore and I use Broadcom Wi-Fi for AirDrop and Continuity, if you want to use the stock wi-fi card, try to make it work yourself. On success, feel free to open an issue to describe your efforts and pull request to help other people!
 
 - Built-in SD card reader
+
+
 - Fingerprint
     - It's detected but it is useless (can't authenticate on lockscreen or in password manager), so I decided to disable that port.
+
+
 - SSD. I had kernel panics with Intel 660p, I don't know if it works now, but 10.13.4 and lower certainly had problems with it. As far as I know, not a problem anymore with Catalina and up.
     - Replaced with Samsung EVO970 250GB
+- NVidia GPU (not supported by macOS)
 
 **What was not tested**
 
@@ -110,7 +116,7 @@ It just speeds up the configuration. You can put it back as it was after this gu
 
 
 - You may change boot entries, timeout and add additional boot options if you want.
-- Make sure to generate proper SMBIOS, because all serial numbers are zeroed out in this repository. This is required to use Apple ID, iMessage and App Store. See [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
+- ❗️ Make sure to generate proper SMBIOS, because all serial numbers are zeroed out in this repository. This is required to use Apple ID, iMessage and App Store. See [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 - If you use Intel SSD, make sure TRIM works, lack of it can lead to serious performance issues.
 - You may remap brightness controls to F10-F11 as I did, stock keys require an SSDT patch which I didn't make at the moment.
 
@@ -136,6 +142,8 @@ Feel free to create issues to fix my guide or give me some suggestions, you're w
 [**ioreknanou**](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/members/ioreknanou.80739/) for making guide for older model, this guide is an edit of [this](https://www.tonymacx86.com/threads/guide-acer-swift-3-macos-sierra-10-12-2.210393/)
 
 [**acidanthera**](https://github.com/acidanthera) for awesome kexts and first-class support for hackintosh enthusiasts
+
+[Daliansky](https://github.com/daliansky/XiaoMi-Pro-Hackintosh) for awesome reference "hackintosh setup for a laptop" repository
 
 **Other Useful Links**
 
